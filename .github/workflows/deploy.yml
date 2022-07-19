@@ -35,8 +35,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./.build
-      - name: Copy To Branches Action
-        uses: planetoftheweb/copy-to-branches@v1
-        env:
-          key: main
-          files: CNAME
+      - name: copy CNAME
+        id: cp CNAME
+        continue-on-error: false
+        run: cp CNAME .build
