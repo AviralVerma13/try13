@@ -4,8 +4,8 @@ on:
   push:
     branches: [ main ]
     paths:
-    - '**.ftd'
-    - '**.md'
+      - '**.ftd'
+      - '**.md'
   workflow_dispatch:
   workflow_call:
 env:
@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: FranzDiebold/github-env-vars-action@v2
       - name: Install fpm
         id: install_fpm
@@ -33,4 +35,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./.build
-          run: cp CNAME ./.build
+      - name: Copy To Branches Action
+        uses: planetoftheweb/copy-to-branches@v1
+        env:
+          branches: .build
+          key: main
+          files: CNAME
