@@ -31,13 +31,13 @@ jobs:
         run: |
           echo "Using '$CI_REPOSITORY_NAME_SLUG/' as the base while building"
           fpm build --base=/$CI_REPOSITORY_NAME/
+      - name: copy CNAME
+        id: cp_CNAME
+        continue-on-error: false
+        run: cp CNAME .build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./.build
-      - name: copy CNAME
-        id: cp_CNAME
-        continue-on-error: false
-        run: cp CNAME .build
