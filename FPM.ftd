@@ -1,8 +1,8 @@
 -- import: fpm
 
--- fpm.package: <user_name>.github.io/<repo_name>
-zip: github.com/<user_name>/<repo_name>/archive/refs/heads/main.zip
-base: https://raw.githubusercontent.com/<user_name>/<repo_name>/main
+-- fpm.package: aviralverma13.github.io/try13
+zip: github.com/aviralverma13/try13/archive/refs/heads/main.zip
+base: https://raw.githubusercontent.com/aviralverma13/try13/main
 
 -- fpm.dependency: fifthtry.github.io/doc-site as ds
 
