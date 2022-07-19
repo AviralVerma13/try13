@@ -15,7 +15,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: work around permission issue
+        run: git config --global --add safe.directory /__w/try13/try13
         with:
           fetch-depth: 0
       - uses: FranzDiebold/github-env-vars-action@v2
