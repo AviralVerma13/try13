@@ -1,6 +1,7 @@
 name: Copy To Branches
-on:
-  workflow_dispatch:
+
+on: [push]
+
 jobs:
   copy-to-branches:
     runs-on: ubuntu-latest
