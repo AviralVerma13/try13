@@ -36,6 +36,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./.build
       - name: copy CNAME
-        id: cp CNAME
+        id: cp_CNAME
         continue-on-error: false
         run: cp CNAME .build
