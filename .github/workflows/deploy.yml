@@ -18,8 +18,6 @@ jobs:
       - name: work around permission issue
         run: git config --global --add safe.directory /__w/try13/try13
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - uses: FranzDiebold/github-env-vars-action@v2
       - name: Install fpm
         id: install_fpm
